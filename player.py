@@ -1,29 +1,15 @@
+import random
+from draw import draw_d20, draw_d6
+
 class Player:
-    def_init_(self, name: str, role: str, strength: int, intelligence: int, weakness: int):
-    self.name = name
-    self.role = role
-    self.strength = 50
-    self.intelligence = 50
-    self.weakness = 50
+    def __init__(self, name: str, role: str, strength: int, intelligence: int, weakness: str):
+        self.name = name
+        self.role = role
+        self.strength = strength
+        self.intelligence = intelligence
+        self.weakness = weakness
 
-    def roll
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-player_1 = Player('')
-option = input('Press A to roll advantage or Enter to roll a d20')
-if option.lower == 'a':
-    player_1.roll_advantage()
-else:
-    player_1.roll_d20()
+    def roll_d6(self) -> int:
+        roll = random.randint(1, 6)
+        draw_d6(roll)
+        return roll
