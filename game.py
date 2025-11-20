@@ -18,15 +18,37 @@ if __name__ == '__main__':
     # any critical success / failure?
 
     name = input('name: ')
-    role = input('role: ')
     strength = input('strength: ')
     intelligence = input('intelligence: ')
     weakness = input('weakness: ')
 
-    player = Player(name, role, int(strength), int(intelligence), weakness)
+    player = Player(name, int(strength), int(intelligence), weakness)
 
-    print('Your name is ' + player.name + ' and your role is ' + player.role + '.')
-    print_dramatic_text('Our adventure begins in a shady tavern ...')
+    print('Your name is ' + player.name + '.')
 
+    world = ''
     input('Press Enter to roll a d6.')
-    player.roll_d6()
+    roll = player.roll_d6()
+    if roll == 1 or roll == 2:
+        print('Hello, fine player! Fate has decided that you will venture into the DemiWorld, a world of darkness and danger ruled by the great Demagorgan!')
+        world = 'DemiWorld'
+    elif roll == 3 or roll == 4: 
+        print('Hello, fine player! Fate has decided that you will venture into the Fairyworld, a land of nature and magic ruled by the benevolent Fairy Princess!')
+        world = 'Fairyworld'
+    elif roll == 5 or roll == 6:
+        print('Hello, fine player! Fate has decided that you will venture into Burningdom, a world of constant fire and magma ruled by the Lord of the Flames!') 
+        world = 'Buringdom'
+    
+
+    while Player.lives == 5:
+        q1 = input("What's the first letter of the alphabet?\n")
+        if q1 != "A":
+            print("ERr wrong answer forehed")
+            player.lives -= 1
+        else:
+            print("great job!")
+        
+        
+    
+
+    
