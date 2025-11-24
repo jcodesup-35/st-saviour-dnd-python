@@ -2,12 +2,12 @@ import random
 from draw import draw_d20, draw_d6
 
 class Player:
-    def __init__(self, name: str, strength: int, intelligence: int, weakness: str):
+    def __init__(self, name: str, wisdom: int, intelligence: int):
         self.name = name
-        self.lives = 5
-        self.strength = strength
+        self.lives = 3
         self.intelligence = intelligence
-        self.weakness = weakness
+        self.wisdom = wisdom
+        
 
     def roll_d6(self) -> int:
         roll = random.randint(1, 6)
