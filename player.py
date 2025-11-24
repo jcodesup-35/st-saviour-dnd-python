@@ -4,7 +4,7 @@ from draw import draw_d20, draw_d6
 class Player:
     def __init__(self, name: str, wisdom: int, intelligence: int):
         self.name = name
-        self.lives = 3
+        Player.lives = 3
         self.intelligence = intelligence
         self.wisdom = wisdom
         
